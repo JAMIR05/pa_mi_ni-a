@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Para Ti 💛</title>
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Indie+Flower&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Indie Flower', cursive;
+      background: url('https://www.transparenttextures.com/patterns/beige-paper.png'), linear-gradient(to bottom, #fff8dc, #fbeec1);
+      background-blend-mode: multiply;
+      min-height: 100vh;
+      overflow-x: hidden;
+      text-align: center;
+      position: relative;
+    }
+
+    /* Champiñones decorativos 🍄 */
+    .mushrooms {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 0;
+      pointer-events: none;
+      font-size: 3rem;
+      opacity: 0.4;
+    }
+
+    .mushrooms span {
+      position: absolute;
+      animation: float 12s infinite ease-in-out;
+    }
+
+    @keyframes float {
+      0% { transform: translateY(0) rotate(0deg); }
+      50% { transform: translateY(10px) rotate(10deg); }
+      100% { transform: translateY(0) rotate(-10deg); }
+    }
+
+    .inicio {
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      background-color: transparent;
+      position: relative;
+      z-index: 2;
+    }
+
+    .btn-play {
+      background: #ffca90;
+      border: none;
+      padding: 1rem 2rem;
+      font-size: 1.3rem;
+      border-radius: 50px;
+      cursor: pointer;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+      transition: all 0.3s;
+      font-family: 'Indie Flower', cursive;
+    }
+
+    .btn-play:hover {
+      background: #f4a261;
+    }
+
+    .container,
+    .wrap,
+    footer {
+      display: none;
+      position: relative;
+      z-index: 2;
+    }
+
+    .container {
+      padding: 2rem 1rem;
+    }
+
+    .flower-img {
+      width: 260px;
+      max-width: 90%;
+      border-radius: 20px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+      animation: fadeIn 2s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      0% { opacity: 0; transform: scale(0.95); }
+      100% { opacity: 1; transform: scale(1); }
+    }
+
+    .text {
+      margin-top: 1.5rem;
+      font-size: 1.3rem;
+      color: #5d4037;
+    }
+
+    h2 {
+      font-size: 2.2rem;
+      color: #d17a00;
+      margin-bottom: 0.5rem;
+      font-family: 'Great Vibes', cursive;
+    }
+
+    .wrap {
+      margin-top: 3rem;
+      padding: 2rem 1rem;
+    }
+
+    .postcard-container {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .postcard1 {
+      width: 90%;
+      max-width: 700px;
+      background: #f5e3b8;
+      position: absolute;
+      filter: blur(3px);
+      z-index: -1;
+      border-radius: 10px;
+      box-shadow: 0.8em 0.8em 15px rgba(0, 0, 0, 0.3);
+      transform: rotate(2.5deg);
+    }
+
+    .postcard {
+      width: 90%;
+      max-width: 700px;
+      background: rgba(255, 255, 255, 0.95);
+      padding: 2em;
+      border-radius: 10px;
+      box-shadow: 0.8em 0.8em 15px rgba(0, 0, 0, 0.2);
+      transform: rotate(2.5deg);
+      transition: transform 0.5s ease;
+    }
+
+    .postcard:hover {
+      transform: rotate(0deg);
+    }
+
+    .postcard p {
+      font-size: 1.1rem;
+      font-family: cursive;
+      line-height: 1.8;
+      color: #4e342e;
+    }
+
+    .postcard p span {
+      font-size: 1.6rem;
+      font-weight: bold;
+      color: #a52a2a;
+      text-shadow: 0 0 10px #fff;
+    }
+
+    .ullu {
+      font-size: 1.4rem;
+      display: inline-block;
+      margin-top: 1rem;
+      color: #6d4c41;
+      text-shadow: 0 0 10px #fff;
+    }
+
+    footer {
+      margin-top: 3rem;
+      font-size: 0.9rem;
+      color: #888;
+      position: relative;
+      z-index: 2;
+    }
+
+    @media screen and (max-width: 600px) {
+      .postcard, .postcard1 {
+        transform: rotate(0deg);
+        padding: 1.5em;
+      }
+
+      .postcard:hover {
+        transform: none;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Champiñones 🍄 decorativos -->
+  <div class="mushrooms">
+    <span style="top: 5%; left: 10%;">🍄</span>
+    <span style="top: 15%; left: 85%;">🍄</span>
+    <span style="top: 35%; left: 20%;">🍄</span>
+    <span style="top: 50%; left: 80%;">🍄</span>
+    <span style="top: 65%; left: 30%;">🍄</span>
+    <span style="top: 75%; left: 60%;">🍄</span>
+    <span style="top: 85%; left: 10%;">🍄</span>
+    <span style="top: 90%; left: 90%;">🍄</span>
+  </div>
+
+  <!-- Botón para iniciar -->
+  <div class="inicio" id="inicio">
+    <button class="btn-play" onclick="mostrarContenido()">Presiona aquí amor hazme caso ya porque si no no podras ver que hay detras 🙈😚</button>
+  </div>
+
+  <!-- Contenido -->
+  <div class="container" id="contenido">
+    <img src="flores.png" alt="Ramo de flores amarillas" class="flower-img" />
+    <div class="text">
+      <h2>🌼 Para ti, mi amor 🌼</h2>
+      Tu sonrisa es tan hermosa como un ramo de flores amarillas.<br />
+      Y esto... es solo para verla brillar aún más 💛 aunque sean virtuales, aun así haría todo sin importar el detalle mi niña.
+    </div>
+  </div>
+
+  <div class="wrap">
+    <h2 style="font-size: 3rem;">💌 Para ti 💌</h2>
+    <div class="postcard-container">
+      <div class="postcard1"></div>
+      <div class="postcard">
+        <p>
+          <span>Mi amor,</span><br><br>
+          Hoy te regalo flores amarillas no solo porque son hermosas, sino porque cada una de ellas lleva un mensaje escondido: 🌼<br><br>
+          Son promesas disfrazadas de pétalos. Promesas de cuidado, de amor sincero, de estar para ti en los días buenos y los no tanto.<br><br>
+          Hoy, con este pequeño ramo virtual, quiero recordarte que eres mi razón para sonreír, mi inspiración, y la persona que hace que todo cobre sentido.<br><br>
+          Aunque sean virtuales, siempre intentaré hacerte un detalle, mi amor. Aunque tengo otro detalle... pero todavía no llega la fecha. Esta sorpresa es por todo lo que no pude darte.
+Pero shhh... tú no sabes nada, cara de culo 😚
+Te amo, mi niña hermosa. Espero que te haya gustado este ramo de flores amarillas virtuales.<br><br>
+          <span class="ullu">Con todo mi corazón,<br>Jamir <3</span>
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    Hecho con amor y con mucho dolor de cabeza 💛
+  </footer>
+
+  <!-- Música -->
+  <audio id="musica" src="roi.mp3" preload="auto" loop></audio>
+
+  <script>
+    function mostrarContenido() {
+      const audio = document.getElementById('musica');
+      audio.play();
+
+      document.getElementById('inicio').style.display = 'none';
+      document.getElementById('contenido').style.display = 'block';
+      document.querySelector('.wrap').style.display = 'block';
+      document.querySelector('footer').style.display = 'block';
+    }
+  </script>
+</body>
+</html>
